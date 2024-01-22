@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+  <title>Домашняя страница библиотеки</title>
+{% endblock %}
+
+{% block content %}
+  <h1>Домашняя страница сайта</h1>
+  <h2>Динамически изменяемое наполнение</h2>
+  <p>Библиотека ведёт подсчёт метрикам:</p>
+  <ul>
+    <li><strong>Всего книг:</strong> {{ num_books }}</li>
+    <li><strong>Количество экземпляров:</strong> {{ num_instances }}</li>
+    <li><strong>Количество доступных экземпляров:</strong> {{ num_instances_available }}</li>
+    <li><strong>Количество авторов:</strong> {{ num_authors }}</li>
+    <li><strong>Слово 'Фантастика' встречается в жанрах </strong> {{ num_authors }} <strong> раз </strong></li>
+  </ul>
+
+  <p>
+    Вы посещали эту страницу {{ num_visits }} {% if num_visits == 1 %} раз {% else %} раза! {% endif %}
+  </p>
+{% endblock %}
